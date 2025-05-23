@@ -7,7 +7,7 @@
   --text-color: #3c2f2f;
 }
 
-/* GLOBAL STYLES */
+/* Global Styles */
 html {
   scroll-behavior: smooth;
 }
@@ -26,37 +26,26 @@ a {
   font-weight: bold;
   font-size: 1.1rem;
   transition: color 0.3s ease, transform 0.3s ease;
-  /* Removed border-bottom from normal state */
 }
 
 a:hover {
   color: var(--accent-color-light);
-  text-decoration: none; /* No underline */
-  transform: translateY(-3px); /* Moves link up */
-  /* No border or box */
+  transform: translateY(-3px);
+  text-decoration: none;
 }
 
 a:focus {
-  outline: none; /* Remove focus outline (optional) */
+  outline: 2px solid var(--accent-color-light);
+  outline-offset: 2px;
 }
 
-/* HEADER */
+/* Header & Title Block */
 header {
   text-align: center;
   background-color: var(--header-bg);
   border-bottom: 1px solid var(--border-color);
 }
 
-.image-only-header img {
-  width: 100%;
-  height: auto;          /* Keeps aspect ratio */
-  max-height: 300px;     /* Limit the height to reduce vertical space */
-  object-fit: cover;     /* Crops excess, keeps it looking good */
-  display: block;
-  border-bottom: 1px solid #d8c0aa;
-}
-
-/* TITLE BLOCK */
 .title-block {
   text-align: center;
   padding: 2em 1em 1em;
@@ -73,7 +62,7 @@ header {
   color: #5b4a4a;
 }
 
-/* NAVIGATION */
+/* Navigation */
 nav {
   background-color: var(--header-bg);
   padding: 1em 0;
@@ -88,7 +77,11 @@ nav ul {
   margin: 0;
 }
 
-/* MOODBOARD */
+nav ul li a {
+  font-weight: 600;
+}
+
+/* Moodboard */
 .moodboard {
   display: flex;
   justify-content: center;
@@ -103,7 +96,7 @@ nav ul {
   border-radius: 8px;
 }
 
-/* QUOTE SECTION */
+/* Quote Section */
 .quote {
   text-align: center;
   font-style: italic;
@@ -112,89 +105,21 @@ nav ul {
   padding: 0 1em;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2em;
-  background-color: var(--header-bg);
-  font-size: 0.9em;
-}
-
-/* SECTIONS (general spacing) */
-section {
-  padding: 4em 2em;
-  max-width: 900px;
-  margin: auto;
-}
-
-section h2 {
-  color: var(--accent-color);
-  font-size: 2rem;
-  margin-bottom: 1em;
-}
-
-/* BUTTONS (if used) */
-button {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-family: 'DM Serif Display', serif;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: var(--accent-color-light);
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .moodboard img {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 1em;
-  }
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-a:focus, button:focus {
-  outline: 2px solid var(--accent-color-light);
-  outline-offset: 2px;
-}
-
-/* WELCOME QUOTES */
-.welcome-quotes {
-  max-width: 700px;
-  margin: 3em auto;
-  text-align: center;
-  font-family: 'Georgia', serif;
-  color: var(--text-color);
-}
-
-.welcome-quotes blockquote {
-  margin: 0;
-  padding: 0 1em;
-}
-
 .curie-quote {
-  font-size: 1.6rem;
+  max-width: 600px;
+  margin: 2rem auto 3rem auto;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  background-color: #fafafa;
   font-style: italic;
-  color: #5b4a4a; /* muted warm brown */
-  opacity: 0.8;   /* subtle hold effect */
-  line-height: 1.4;
-  position: relative;
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0.8;
 }
 
 .curie-quote footer {
-  margin-top: 1em; /* added extra space */
+  margin-top: 1em;
   font-weight: 600;
   font-style: normal;
   color: var(--accent-color);
@@ -203,7 +128,7 @@ a:focus, button:focus {
   padding: 0.2em 0.6em;
   border: 1.5px solid var(--accent-color);
   border-radius: 5px;
-  max-width: fit-content; /* box hugs text */
+  max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
@@ -221,13 +146,59 @@ a:focus, button:focus {
   font-style: normal;
   color: var(--text-color);
   font-family: 'DM Serif Display', serif;
-  font-weight: 400; /* normal weight */
+  font-weight: 400;
 }
 
-/* MAROON BANNER */
-.maroon-banner {
-  background-color: #800000; /* Maroon */
-  height: 113px;             /* About 3 cm */
-  width: 100%;
-  border-bottom: 1px solid var(--border-color);
+/* Sections */
+section {
+  padding: 4em 2em;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'DM Serif Display', serif;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-color-light);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2em;
+  background-color: var(--header-bg);
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .moodboard img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
