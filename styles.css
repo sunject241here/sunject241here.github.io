@@ -210,10 +210,3 @@ a:focus, button:focus {
   outline-offset: 2px;
 }
 
-/* MAROON BANNER */
-.maroon-banner {
-  background-color: #800000; /* Maroon */
-  height: 113px;             /* About 3 cm */
-  width: 100%;
-  border-bottom: 1px solid var(--border-color);
-}
