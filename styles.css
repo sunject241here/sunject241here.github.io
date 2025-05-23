@@ -7,7 +7,7 @@
   --text-color: #3c2f2f;
 }
 
-/* Global Styles */
+/* GLOBAL STYLES */
 html {
   scroll-behavior: smooth;
 }
@@ -26,26 +26,37 @@ a {
   font-weight: bold;
   font-size: 1.1rem;
   transition: color 0.3s ease, transform 0.3s ease;
+  /* Removed border-bottom from normal state */
 }
 
 a:hover {
   color: var(--accent-color-light);
-  transform: translateY(-3px);
-  text-decoration: none;
+  text-decoration: none; /* No underline */
+  transform: translateY(-3px); /* Moves link up */
+  /* No border or box */
 }
 
 a:focus {
-  outline: 2px solid var(--accent-color-light);
-  outline-offset: 2px;
+  outline: none; /* Remove focus outline (optional) */
 }
 
-/* Header & Title Block */
+/* HEADER */
 header {
   text-align: center;
   background-color: var(--header-bg);
   border-bottom: 1px solid var(--border-color);
 }
 
+.image-only-header img {
+  width: 100%;
+  height: auto;          /* Keeps aspect ratio */
+  max-height: 300px;     /* Limit the height to reduce vertical space */
+  object-fit: cover;     /* Crops excess, keeps it looking good */
+  display: block;
+  border-bottom: 1px solid #d8c0aa;
+}
+
+/* TITLE BLOCK */
 .title-block {
   text-align: center;
   padding: 2em 1em 1em;
@@ -62,7 +73,7 @@ header {
   color: #5b4a4a;
 }
 
-/* Navigation */
+/* NAVIGATION */
 nav {
   background-color: var(--header-bg);
   padding: 1em 0;
@@ -77,11 +88,7 @@ nav ul {
   margin: 0;
 }
 
-nav ul li a {
-  font-weight: 600;
-}
-
-/* Moodboard */
+/* MOODBOARD */
 .moodboard {
   display: flex;
   justify-content: center;
@@ -96,7 +103,7 @@ nav ul li a {
   border-radius: 8px;
 }
 
-/* Quote Section */
+/* QUOTE SECTION */
 .quote {
   text-align: center;
   font-style: italic;
@@ -105,51 +112,15 @@ nav ul li a {
   padding: 0 1em;
 }
 
-.curie-quote {
-  max-width: 600px;
-  margin: 2rem auto 3rem auto;
-  padding: 1rem 1.5rem;
-  border: 2px solid var(--accent-color);
-  border-radius: 8px;
-  background-color: #fafafa;
-  font-style: italic;
+/* FOOTER */
+footer {
   text-align: center;
-  color: var(--text-color);
-  opacity: 0.8;
+  padding: 2em;
+  background-color: var(--header-bg);
+  font-size: 0.9em;
 }
 
-.curie-quote footer {
-  margin-top: 1em;
-  font-weight: 600;
-  font-style: normal;
-  color: var(--accent-color);
-  font-size: 1rem;
-  display: inline-block;
-  padding: 0.2em 0.6em;
-  border: 1.5px solid var(--accent-color);
-  border-radius: 5px;
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.quote-separator {
-  width: 50px;
-  border: 0;
-  border-top: 2px solid var(--accent-color);
-  margin: 2em auto;
-  opacity: 0.5;
-}
-
-.original-quote {
-  font-size: 1.3rem;
-  font-style: normal;
-  color: var(--text-color);
-  font-family: 'DM Serif Display', serif;
-  font-weight: 400;
-}
-
-/* Sections */
+/* SECTIONS (general spacing) */
 section {
   padding: 4em 2em;
   max-width: 900px;
@@ -162,7 +133,7 @@ section h2 {
   margin-bottom: 1em;
 }
 
-/* Buttons */
+/* BUTTONS (if used) */
 button {
   background-color: var(--accent-color);
   color: white;
@@ -177,16 +148,7 @@ button:hover {
   background-color: var(--accent-color-light);
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2em;
-  background-color: var(--header-bg);
-  font-size: 0.9em;
-  color: var(--text-color);
-}
-
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .moodboard img {
     width: 100%;
@@ -201,4 +163,68 @@ footer {
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+a:focus, button:focus {
+  outline: 2px solid var(--accent-color-light);
+  outline-offset: 2px;
+}
+
+/* WELCOME QUOTES */
+.welcome-quotes {
+  max-width: 700px;
+  margin: 3em auto;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: var(--text-color);
+}
+
+.welcome-quotes blockquote {
+  margin: 0;
+  padding: 0 1em;
+}
+
+.curie-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;       /* Same size as original */
+  font-style: italic;
+  font-weight: normal;     /* Not bold */
+  color: var(--text-color);
+  opacity: 0.8;
+  line-height: 1.4;
+  margin-bottom: 0.8em;    /* space below quote before name */
+  text-align: center;
+}
+
+.curie-quote footer {
+  display: inline-block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  font-weight: normal;
+  color: black;            /* Black text */
+  padding: 0.2em 0.6em;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 5px;
+  max-width: fit-content;
+  margin: 0 auto;
+  margin-top: 0.5em;       /* space above name box */
+}
+
+.original-quote {
+  font-family: 'DM Serif Display', serif;
+  font-weight: normal;     /* Make sure it's not bold */
+  font-size: 1.3rem;
+  font-style: normal;      /* normal style */
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 1.5em;       /* space from above */
+}
+
+/* QUOTE SEPARATOR */
+.quote-separator {
+  width: 50px;
+  border: 0;
+  border-top: 2px solid var(--accent-color);
+  margin: 2em auto;
+  opacity: 0.5;
 }
